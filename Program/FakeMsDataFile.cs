@@ -25,7 +25,12 @@ namespace Program
 {
     public class FakeMsDataFile : MsDataFile
     {
-        public FakeMsDataFile(MsDataScan[] FakeScans) : base(FakeScans, new SourceFile(@"scan number only nativeID format", "mzML format", null, "SHA-1", @"C:\fake.mzML", null))
+        public FakeMsDataFile(MsDataScan[] FakeScans) : base(FakeScans, new SourceFile(@"scan number only nativeID format", 
+            "mzML format", 
+            null, 
+            "SHA-1", 
+            @"C:\fake.mzML", 
+            null))
         {
             this.Scans = FakeScans;
         }
