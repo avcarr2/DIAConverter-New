@@ -121,7 +121,7 @@ namespace Program
                     if (i == 2) break;
                     try
                     {
-                        Program1.DoFileProcessing(matchedOutput.Key, matchedOutput.Value[i], PathToCombinedFiles); 
+                        Program.DoFileProcessing(matchedOutput.Key, matchedOutput.Value[i], PathToCombinedFiles); 
                     }
                     catch (Exception e)
                     {
@@ -182,7 +182,7 @@ namespace Program
                 {
                     try
                     {
-                        Program1.DoFileProcessing(firstKey, mgfFiles[i], PathToOutputFolder); 
+                        Program.DoFileProcessing(firstKey, mgfFiles[i], PathToOutputFolder); 
                     }
                     catch(Exception e)
                     {
@@ -202,7 +202,7 @@ namespace Program
                         if (i == 2) break;
                         try
                         {
-                            Program1.DoFileProcessing(matchedOutput.Key, matchedOutput.Value[i], PathToCombinedFiles);
+                            Program.DoFileProcessing(matchedOutput.Key, matchedOutput.Value[i], PathToCombinedFiles);
                         }
                         catch (Exception e)
                         {

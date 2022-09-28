@@ -10,30 +10,21 @@ using IO.MzML;
 
 namespace Program
 {
-	class Program1
+	public class Program
 	{
 		static void Main(string[] args)
 		{
-            // args[0] = option to run. If "1", then it just runs the combination. If "0",
-			// runs the combination only. 
-            switch (args[0])
-            {
-				case "1": { ProgramCombineFiles proc = new(); 
-						proc.Main(args.Skip(1).ToArray()); } 
-					break;
-				case "0": { Program2 proc = new(); 
-						proc.Main(args.Skip(1).ToArray()); } 
-					break;
-			}
-		}
+            ProgramCombineFiles proc = new(); 
+			proc.Main(args.ToArray()); 
+        }
         public static void DoFileProcessing(string filePathMZML, string filePathMgf, string outfolderPath)
 		{
 			// load mzmls
 			Mzml mzml = Mzml.LoadAllStaticData(filePathMZML);
             SourceFile sf = mzml.SourceFile;
             List<MsDataScan> ms1Scans = mzml.GetAllScansList(); 
-
-			// load mgfs
+			
+            // load mgfs
 			Mgf mgf = Mgf.LoadAllStaticData(filePathMZML);
             List<MsDataScan> ms2Scans = mgf.GetAllScansList();
 
