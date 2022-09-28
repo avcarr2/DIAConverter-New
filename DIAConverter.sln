@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31424.327
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Program", "Program\Program.csproj", "{54129B04-969C-4592-945F-72A00A56190C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chemistry", "Chemistry\Chemistry.csproj", "{C813A894-8FB3-4734-8E34-985D73AD135B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DIALFQaunt_MS1", "DIALFQaunt_MS1\DIALFQaunt_MS1.csproj", "{5952A067-E088-436D-B12E-D77B312E0497}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MassSpectrometry", "MassSpectrometry\MassSpectrometry.csproj", "{AD7CE8FE-BEB5-41B9-8213-348A6485CA15}"
 EndProject
@@ -58,14 +56,6 @@ Global
 		{C813A894-8FB3-4734-8E34-985D73AD135B}.Release|Any CPU.ActiveCfg = Release|x64
 		{C813A894-8FB3-4734-8E34-985D73AD135B}.Release|x64.ActiveCfg = Release|x64
 		{C813A894-8FB3-4734-8E34-985D73AD135B}.Release|x64.Build.0 = Release|x64
-		{5952A067-E088-436D-B12E-D77B312E0497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5952A067-E088-436D-B12E-D77B312E0497}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5952A067-E088-436D-B12E-D77B312E0497}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{5952A067-E088-436D-B12E-D77B312E0497}.Debug|x64.Build.0 = Debug|Any CPU
-		{5952A067-E088-436D-B12E-D77B312E0497}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5952A067-E088-436D-B12E-D77B312E0497}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5952A067-E088-436D-B12E-D77B312E0497}.Release|x64.ActiveCfg = Release|Any CPU
-		{5952A067-E088-436D-B12E-D77B312E0497}.Release|x64.Build.0 = Release|Any CPU
 		{AD7CE8FE-BEB5-41B9-8213-348A6485CA15}.Debug|Any CPU.ActiveCfg = Debug|x64
 		{AD7CE8FE-BEB5-41B9-8213-348A6485CA15}.Debug|x64.ActiveCfg = Debug|x64
 		{AD7CE8FE-BEB5-41B9-8213-348A6485CA15}.Debug|x64.Build.0 = Debug|x64

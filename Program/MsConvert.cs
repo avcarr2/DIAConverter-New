@@ -12,7 +12,7 @@ namespace Program
     {
         public string PathToMsConvert { get; set; }
         public string PathToOutputDirectory { get; set; }
-        public string BinaryEncodingPrecisiong { get; set; }
+        public string BinaryEncodingPrecision { get; set; }
         public string ZlibCompression { get; set; }
         public string TitleMakerFilter { get; set; }
         public Dictionary<string, string> MsConvertParameters { get; set; }

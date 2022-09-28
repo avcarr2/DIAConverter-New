@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using DIALFQaunt_MS1;
 using IO.Mgf; 
 using IO.MzML; 
 using MassSpectrometry;
 
 
-namespace DIAMS1Quant
+namespace Program
 {
 	public static class DIAImport
 	{

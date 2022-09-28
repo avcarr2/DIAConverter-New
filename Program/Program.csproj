@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DIALFQaunt_MS1\DIALFQaunt_MS1.csproj" />
     <ProjectReference Include="..\MassSpectrometry\MassSpectrometry.csproj" />
     <ProjectReference Include="..\Mgf\Mgf.csproj" />
     <ProjectReference Include="..\MzLibUtil\MzLibUtil.csproj" />

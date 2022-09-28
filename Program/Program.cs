@@ -7,8 +7,6 @@ using Proteomics;
 using MzLibUtil;
 using IO.Mgf;
 using IO.MzML;
-using DIAMS1Quant; 
-
 
 namespace Program
 {
@@ -27,12 +25,6 @@ namespace Program
 						proc.Main(args.Skip(1).ToArray()); } 
 					break;
 			}
-		}
-
-		public static string[] FetchFilesFromFolder(string mgfFolderPath)
-		{
-			string[] mgfFileNames = Directory.GetFiles(mgfFolderPath, "*.mgf");
-			return mgfFileNames; 
 		}
         public static void DoFileProcessing(string filePathMZML, string filePathMgf, string outfolderPath)
 		{
@@ -76,12 +68,12 @@ namespace Program
 
 			// put scans into an array instead of a list 
 			MsDataScan[] combinedScansArray = combinedScans.ToArray();
-			FakeMsDataFile fakeFile = new FakeMsDataFile(combinedScansArray.ToArray());
+            MsDataFile newFile = new MsDataFile(combinedScansArray, sf); 
 
-			// write file
+            // write file
 			string outfileName = filePathMgf.Replace(".mgf", ".mzml");
 			string outputFilePath = Path.Combine(outfolderPath, outfileName);
-			MzmlMethods.CreateAndWriteMyMzmlWithCalibratedSpectra(fakeFile, outputFilePath, false);
+			MzmlMethods.CreateAndWriteMyMzmlWithCalibratedSpectra(newFile, outputFilePath, false);
 		}
 	}
 }
