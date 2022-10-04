@@ -2,7 +2,7 @@
   "profiles": {
     "Program": {
       "commandName": "Project",
-      "commandLineArgs": "\"1\" \"J:\\20220824_QE_DSD_cNP\\quant\\3 MS1\" \"J:\\20220824_QE_DSD_cNP\\quant\\4 DIAUmpire mgfs\" \"J:\\20220824_QE_DSD_cNP\\quant\\4 DIAUmpire mgfs\""
+      "commandLineArgs": "\"D:\\Ashley\\test\" \"D:\\Ashley\\test\" \"D:\\Ashley\\output\""
     }
   }
 }

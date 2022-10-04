@@ -59,61 +59,64 @@ namespace IO.MzML
 
         public static readonly Dictionary<string, Polarity> PolarityDictionary = new Dictionary<string, Polarity>
         {
-            {"MS:1000129", Polarity.Negative},
-            {"MS:1000130", Polarity.Positive}
+            { "MS:1000129", Polarity.Negative },
+            { "MS:1000130", Polarity.Positive }
         };
 
-        public static readonly Dictionary<string, MZAnalyzerType> AnalyzerDictionary = new Dictionary<string, MZAnalyzerType>
-        {
-            { "MS:1000443", MZAnalyzerType.Unknown},
-            { "MS:1000081", MZAnalyzerType.Quadrupole},
-            { "MS:1000291", MZAnalyzerType.IonTrap2D},
-            { "MS:1000082", MZAnalyzerType.IonTrap3D},
-            { "MS:1000484", MZAnalyzerType.Orbitrap},
-            { "MS:1000084", MZAnalyzerType.TOF},
-            { "MS:1000079", MZAnalyzerType.FTICR},
-            { "MS:1000080", MZAnalyzerType.Sector}
-        };
+        public static readonly Dictionary<string, MZAnalyzerType> AnalyzerDictionary =
+            new Dictionary<string, MZAnalyzerType>
+            {
+                { "MS:1000443", MZAnalyzerType.Unknown },
+                { "MS:1000081", MZAnalyzerType.Quadrupole },
+                { "MS:1000291", MZAnalyzerType.IonTrap2D },
+                { "MS:1000082", MZAnalyzerType.IonTrap3D },
+                { "MS:1000484", MZAnalyzerType.Orbitrap },
+                { "MS:1000084", MZAnalyzerType.TOF },
+                { "MS:1000079", MZAnalyzerType.FTICR },
+                { "MS:1000080", MZAnalyzerType.Sector }
+            };
 
-        public static readonly Dictionary<string, DissociationType> DissociationDictionary = new Dictionary<string, DissociationType>
-        {
-            { "MS:1000133", DissociationType.CID},
-            { "MS:1000134", DissociationType.PD},
-            { "MS:1000135", DissociationType.PSD},
-            { "MS:1000136", DissociationType.SID},
-            { "MS:1000242", DissociationType.BIRD},
-            { "MS:1000250", DissociationType.ECD},
-            { "MS:1000262", DissociationType.IRMPD},
-            { "MS:1000282", DissociationType.SORI},
-            { "MS:1000435", DissociationType.MPD},
-            { "MS:1000598", DissociationType.ETD},
-            { "MS:1000599", DissociationType.PQD},
-            { "MS:1001880", DissociationType.ISCID},
-            { "MS:1000422", DissociationType.HCD},
-            { "MS:1002631", DissociationType.EThcD},
-            { "MS:1000044", DissociationType.Unknown},
-        };
+        public static readonly Dictionary<string, DissociationType> DissociationDictionary =
+            new Dictionary<string, DissociationType>
+            {
+                { "MS:1000133", DissociationType.CID },
+                { "MS:1000134", DissociationType.PD },
+                { "MS:1000135", DissociationType.PSD },
+                { "MS:1000136", DissociationType.SID },
+                { "MS:1000242", DissociationType.BIRD },
+                { "MS:1000250", DissociationType.ECD },
+                { "MS:1000262", DissociationType.IRMPD },
+                { "MS:1000282", DissociationType.SORI },
+                { "MS:1000435", DissociationType.MPD },
+                { "MS:1000598", DissociationType.ETD },
+                { "MS:1000599", DissociationType.PQD },
+                { "MS:1001880", DissociationType.ISCID },
+                { "MS:1000422", DissociationType.HCD },
+                { "MS:1002631", DissociationType.EThcD },
+                { "MS:1000044", DissociationType.Unknown },
+            };
 
-        public static readonly Dictionary<string, DissociationType> DissociationTypeNames = new Dictionary<string, DissociationType>
-        {
-            { "collision-induced dissociation", DissociationType.CID},
-            { "plasma desorption", DissociationType.PD},
-            { "post-source decay", DissociationType.PSD},
-            { "surface-induced dissociation", DissociationType.SID},
-            { "blackbody infrared radiative dissociation", DissociationType.BIRD},
-            { "electron capture dissociation", DissociationType.ECD},
-            { "infrared multiphoton dissociation", DissociationType.IRMPD},
-            { "sustained off-resonance irradiation", DissociationType.SORI},
-            { "photodissociation", DissociationType.MPD},
-            { "electron transfer dissociation", DissociationType.ETD},
-            { "pulsed q dissociation", DissociationType.PQD},
-            { "in-source collision-induced dissociation", DissociationType.ISCID},
-            { "higher energy beam-type collision-induced dissociation", DissociationType.HCD},
-            { "Electron-Transfer/Higher-Energy Collision Dissociation (EThcD)", DissociationType.EThcD},
-            { "unknown dissociation type", DissociationType.Unknown},
-        };
+        public static readonly Dictionary<string, DissociationType> DissociationTypeNames =
+            new Dictionary<string, DissociationType>
+            {
+                { "collision-induced dissociation", DissociationType.CID },
+                { "plasma desorption", DissociationType.PD },
+                { "post-source decay", DissociationType.PSD },
+                { "surface-induced dissociation", DissociationType.SID },
+                { "blackbody infrared radiative dissociation", DissociationType.BIRD },
+                { "electron capture dissociation", DissociationType.ECD },
+                { "infrared multiphoton dissociation", DissociationType.IRMPD },
+                { "sustained off-resonance irradiation", DissociationType.SORI },
+                { "photodissociation", DissociationType.MPD },
+                { "electron transfer dissociation", DissociationType.ETD },
+                { "pulsed q dissociation", DissociationType.PQD },
+                { "in-source collision-induced dissociation", DissociationType.ISCID },
+                { "higher energy beam-type collision-induced dissociation", DissociationType.HCD },
+                { "Electron-Transfer/Higher-Energy Collision Dissociation (EThcD)", DissociationType.EThcD },
+                { "unknown dissociation type", DissociationType.Unknown },
+            };
 
-        private Mzml(MsDataScan[] scans, SourceFile sourceFile) : base(scans, sourceFile)
+        public Mzml(MsDataScan[] scans, SourceFile sourceFile) : base(scans, sourceFile)
         {
         }
 
@@ -143,7 +146,10 @@ namespace IO.MzML
             }
 
             SourceFile sourceFile;
-            if (_mzMLConnection.fileDescription.sourceFileList != null && _mzMLConnection.fileDescription.sourceFileList.sourceFile != null && _mzMLConnection.fileDescription.sourceFileList.sourceFile[0] != null && _mzMLConnection.fileDescription.sourceFileList.sourceFile[0].cvParam != null)
+            if (_mzMLConnection.fileDescription.sourceFileList != null &&
+                _mzMLConnection.fileDescription.sourceFileList.sourceFile != null &&
+                _mzMLConnection.fileDescription.sourceFileList.sourceFile[0] != null &&
+                _mzMLConnection.fileDescription.sourceFileList.sourceFile[0].cvParam != null)
             {
                 var simpler = _mzMLConnection.fileDescription.sourceFileList.sourceFile[0];
                 string nativeIdFormat = null;
@@ -156,6 +162,7 @@ namespace IO.MzML
                     {
                         fileFormat = "Thermo RAW format";
                     }
+
                     if (cv.accession.Equals(@"MS:1000584"))
                     {
                         fileFormat = "mzML format";
@@ -165,10 +172,12 @@ namespace IO.MzML
                     {
                         nativeIdFormat = "Thermo nativeID format";
                     }
+
                     if (cv.accession.Equals(@"MS:1000776"))
                     {
                         nativeIdFormat = "scan number only nativeID format";
                     }
+
                     if (cv.accession.Equals(@"MS:1000824"))
                     {
                         nativeIdFormat = "no nativeID format";
@@ -179,6 +188,7 @@ namespace IO.MzML
                         checkSum = cv.value;
                         checkSumType = "MD5";
                     }
+
                     if (cv.accession.Equals(@"MS:1000569"))
                     {
                         checkSum = cv.value;
@@ -207,6 +217,7 @@ namespace IO.MzML
                             .Replace("-", string.Empty);
                     }
                 }
+
                 sourceFile = new SourceFile(
                     @"no nativeID format",
                     @"mzML format",
@@ -219,13 +230,14 @@ namespace IO.MzML
             var numSpecta = _mzMLConnection.run.spectrumList.spectrum.Length;
             MsDataScan[] scans = new MsDataScan[numSpecta];
 
-            Parallel.ForEach(Partitioner.Create(0, numSpecta), new ParallelOptions { MaxDegreeOfParallelism = maxThreads }, fff =>
-            {
-                for (int i = fff.Item1; i < fff.Item2; i++)
+            Parallel.ForEach(Partitioner.Create(0, numSpecta),
+                new ParallelOptions { MaxDegreeOfParallelism = maxThreads }, fff =>
                 {
-                    scans[i] = GetMsDataOneBasedScanFromConnection(_mzMLConnection, i + 1, filterParams);
-                }
-            });
+                    for (int i = fff.Item1; i < fff.Item2; i++)
+                    {
+                        scans[i] = GetMsDataOneBasedScanFromConnection(_mzMLConnection, i + 1, filterParams);
+                    }
+                });
 
             //Mzml sometimes have scan numbers specified, but usually not.
             //In the event that they do, the iterator above unintentionally assigned them to an incorrect index.
@@ -238,13 +250,16 @@ namespace IO.MzML
                 //check if no duplicates
                 if (!checkForDuplicateScans.Add(scan.OneBasedScanNumber)) //returns false if the scan already exists
                 {
-                    throw new MzLibException("Scan number " + scan.OneBasedScanNumber.ToString() + " appeared multiple times in " + filePath);
+                    throw new MzLibException("Scan number " + scan.OneBasedScanNumber.ToString() +
+                                             " appeared multiple times in " + filePath);
                 }
+
                 //check if scans are in order
                 if (previousScanNumber > scan.OneBasedScanNumber)
                 {
                     ordered = false;
                 }
+
                 previousScanNumber = scan.OneBasedScanNumber;
             }
 
@@ -255,6 +270,7 @@ namespace IO.MzML
                 {
                     indexedScans[scan.OneBasedScanNumber - 1] = scan;
                 }
+
                 scans = indexedScans;
             }
 
@@ -281,11 +297,14 @@ namespace IO.MzML
             return new Mzml(scans, sourceFile);
         }
 
-        private static MsDataScan GetMsDataOneBasedScanFromConnection(Generated.mzMLType _mzMLConnection, int oneBasedIndex, IFilteringParams filterParams)
+        private static MsDataScan GetMsDataOneBasedScanFromConnection(Generated.mzMLType _mzMLConnection,
+            int oneBasedIndex, IFilteringParams filterParams)
         {
             // Read in the instrument configuration types from connection (in mzml it's at the start)
 
-            Generated.InstrumentConfigurationType[] configs = new Generated.InstrumentConfigurationType[_mzMLConnection.instrumentConfigurationList.instrumentConfiguration.Length];
+            Generated.InstrumentConfigurationType[] configs =
+                new Generated.InstrumentConfigurationType[_mzMLConnection.instrumentConfigurationList
+                    .instrumentConfiguration.Length];
             for (int i = 0; i < _mzMLConnection.instrumentConfigurationList.instrumentConfiguration.Length; i++)
             {
                 configs[i] = _mzMLConnection.instrumentConfigurationList.instrumentConfiguration[i];
@@ -293,7 +312,8 @@ namespace IO.MzML
 
             var defaultInstrumentConfig = _mzMLConnection.run.defaultInstrumentConfigurationRef;
             // May be null!
-            var scanSpecificInsturmentConfig = _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].scanList.scan[0].instrumentConfigurationRef;
+            var scanSpecificInsturmentConfig = _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].scanList
+                .scan[0].instrumentConfigurationRef;
 
             MZAnalyzerType analyzer = default(MZAnalyzerType);
             // use default
@@ -303,7 +323,8 @@ namespace IO.MzML
                 {
                     analyzer = default(MZAnalyzerType);
                 }
-                else if (AnalyzerDictionary.TryGetValue(configs[0].componentList.analyzer[0].cvParam[0].accession, out MZAnalyzerType returnVal))
+                else if (AnalyzerDictionary.TryGetValue(configs[0].componentList.analyzer[0].cvParam[0].accession,
+                             out MZAnalyzerType returnVal))
                 {
                     analyzer = returnVal;
                 }
@@ -315,7 +336,8 @@ namespace IO.MzML
                 {
                     if (configs[i].id.Equals(scanSpecificInsturmentConfig))
                     {
-                        AnalyzerDictionary.TryGetValue(configs[i].componentList.analyzer[0].cvParam[0].accession, out MZAnalyzerType returnVal);
+                        AnalyzerDictionary.TryGetValue(configs[i].componentList.analyzer[0].cvParam[0].accession,
+                            out MZAnalyzerType returnVal);
                         analyzer = returnVal;
                     }
                 }
@@ -334,18 +356,22 @@ namespace IO.MzML
                 {
                     msOrder = int.Parse(cv.value);
                 }
+
                 if (cv.accession.Equals(_centroidSpectrum))
                 {
                     isCentroid = true;
                 }
+
                 if (cv.accession.Equals(_profileSpectrum))
                 {
                     throw new MzLibException("Reading profile mode mzmls not supported");
                 }
+
                 if (cv.accession.Equals(_totalIonCurrent))
                 {
                     tic = double.Parse(cv.value, CultureInfo.InvariantCulture);
                 }
+
                 if (polarity.Equals(Polarity.Unknown))
                 {
                     PolarityDictionary.TryGetValue(cv.accession, out polarity);
@@ -358,7 +384,8 @@ namespace IO.MzML
             double[] masses = new double[0];
             double[] intensities = new double[0];
 
-            foreach (Generated.BinaryDataArrayType binaryData in _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].binaryDataArrayList.binaryDataArray)
+            foreach (Generated.BinaryDataArrayType binaryData in _mzMLConnection.run.spectrumList
+                         .spectrum[oneBasedIndex - 1].binaryDataArrayList.binaryDataArray)
             {
                 bool compressed = false;
                 bool mzArray = false;
@@ -388,11 +415,13 @@ namespace IO.MzML
             double high = double.NaN;
             double low = double.NaN;
 
-            var aScanWindowList = _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].scanList.scan[0].scanWindowList;
+            var aScanWindowList = _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].scanList.scan[0]
+                .scanWindowList;
 
             if (aScanWindowList != null)
             {
-                foreach (Generated.CVParamType cv in _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].scanList.scan[0].scanWindowList.scanWindow[0].cvParam)
+                foreach (Generated.CVParamType cv in _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1]
+                             .scanList.scan[0].scanWindowList.scanWindow[0].cvParam)
                 {
                     if (cv.accession.Equals(_scanWindowLowerLimit))
                     {
@@ -405,7 +434,9 @@ namespace IO.MzML
                 }
             }
 
-            if (filterParams != null && intensities.Length > 0 && ((filterParams.ApplyTrimmingToMs1 && msOrder.Value == 1) || (filterParams.ApplyTrimmingToMsMs && msOrder.Value > 1)))
+            if (filterParams != null && intensities.Length > 0 &&
+                ((filterParams.ApplyTrimmingToMs1 && msOrder.Value == 1) ||
+                 (filterParams.ApplyTrimmingToMsMs && msOrder.Value > 1)))
             {
                 WindowModeHelper(ref intensities, ref masses, filterParams, low, high);
             }
@@ -419,7 +450,8 @@ namespace IO.MzML
             int oneBasedScanNumber = oneBasedIndex;
             if (_mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].scanList.scan[0].cvParam != null)
             {
-                foreach (Generated.CVParamType cv in _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].scanList.scan[0].cvParam)
+                foreach (Generated.CVParamType cv in _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1]
+                             .scanList.scan[0].cvParam)
                 {
                     if (cv.accession.Equals(_retentionTime))
                     {
@@ -429,15 +461,19 @@ namespace IO.MzML
                             rtInMinutes /= 60;
                         }
                     }
+
                     if (cv.accession.Equals(_filterString))
                     {
                         scanFilter = cv.value;
                     }
+
                     if (cv.accession.Equals(_ionInjectionTime))
                     {
                         injectionTime = double.Parse(cv.value, CultureInfo.InvariantCulture);
                     }
-                    if (cv.accession.Equals(_oneBasedScanNumber)) //get the real one based spectrum number (if available), the other assumes they are in order. This is present in .mgf->.mzml conversions from MSConvert
+
+                    if (cv.accession.Equals(
+                            _oneBasedScanNumber)) //get the real one based spectrum number (if available), the other assumes they are in order. This is present in .mgf->.mzml conversions from MSConvert
                     {
                         oneBasedScanNumber = int.Parse(cv.value);
                     }
@@ -465,16 +501,19 @@ namespace IO.MzML
             double selectedIonMz = double.NaN;
             int? selectedIonCharge = null;
             double? selectedIonIntensity = null;
-            foreach (Generated.CVParamType cv in _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].precursorList.precursor[0].selectedIonList.selectedIon[0].cvParam)
+            foreach (Generated.CVParamType cv in _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1]
+                         .precursorList.precursor[0].selectedIonList.selectedIon[0].cvParam)
             {
                 if (cv.accession.Equals(_selectedIonMz))
                 {
                     selectedIonMz = double.Parse(cv.value, CultureInfo.InvariantCulture);
                 }
+
                 if (cv.accession.Equals(_precursorCharge))
                 {
                     selectedIonCharge = int.Parse(cv.value, CultureInfo.InvariantCulture);
                 }
+
                 if (cv.accession.Equals(_peakIntensity))
                 {
                     selectedIonIntensity = double.Parse(cv.value, CultureInfo.InvariantCulture);
@@ -484,18 +523,22 @@ namespace IO.MzML
             double? isolationMz = null;
             double lowIsolation = double.NaN;
             double highIsolation = double.NaN;
-            if (_mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].precursorList.precursor[0].isolationWindow != null)
+            if (_mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].precursorList.precursor[0]
+                    .isolationWindow != null)
             {
-                foreach (Generated.CVParamType cv in _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].precursorList.precursor[0].isolationWindow.cvParam)
+                foreach (Generated.CVParamType cv in _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1]
+                             .precursorList.precursor[0].isolationWindow.cvParam)
                 {
                     if (cv.accession.Equals(_isolationWindowTargetMZ))
                     {
                         isolationMz = double.Parse(cv.value, CultureInfo.InvariantCulture);
                     }
+
                     if (cv.accession.Equals(_isolationWindowLowerOffset))
                     {
                         lowIsolation = double.Parse(cv.value, CultureInfo.InvariantCulture);
                     }
+
                     if (cv.accession.Equals(_isolationWindowUpperOffset))
                     {
                         highIsolation = double.Parse(cv.value, CultureInfo.InvariantCulture);
@@ -505,13 +548,15 @@ namespace IO.MzML
 
             DissociationType dissociationType = DissociationType.Unknown;
 
-            if (_mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].precursorList.precursor[0].activation.cvParam != null)
+            if (_mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].precursorList.precursor[0].activation
+                    .cvParam != null)
             {
                 // for EThcD scans, the dissociation type will not be listed as EThcD. it will be 2 different dissociation types
                 // in the list, one as ETD and one with HCD. so we need to check for that case and interpret it as EThcD.
                 List<DissociationType> scanDissociationTypes = new List<DissociationType>();
 
-                foreach (Generated.CVParamType cv in _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].precursorList.precursor[0].activation.cvParam)
+                foreach (Generated.CVParamType cv in _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1]
+                             .precursorList.precursor[0].activation.cvParam)
                 {
                     if (DissociationDictionary.TryGetValue(cv.accession, out var scanDissociationType))
                     {
@@ -519,7 +564,8 @@ namespace IO.MzML
                     }
                 }
 
-                if (scanDissociationTypes.Contains(DissociationType.ETD) && scanDissociationTypes.Contains(DissociationType.HCD))
+                if (scanDissociationTypes.Contains(DissociationType.ETD) &&
+                    scanDissociationTypes.Contains(DissociationType.HCD))
                 {
                     dissociationType = DissociationType.EThcD;
                 }
@@ -532,10 +578,12 @@ namespace IO.MzML
                     dissociationType = DissociationType.Unknown;
                 }
             }
+
             double? monoisotopicMz = null;
             if (_mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].scanList.scan[0].userParam != null)
             {
-                foreach (var userParam in _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].scanList.scan[0].userParam)
+                foreach (var userParam in _mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].scanList.scan[0]
+                             .userParam)
                 {
                     if (userParam.name.EndsWith("Monoisotopic M/Z:"))
                     {
@@ -545,7 +593,8 @@ namespace IO.MzML
             }
 
             int? precursorScanNumber;
-            if (_mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].precursorList.precursor[0].spectrumRef == null)
+            if (_mzMLConnection.run.spectrumList.spectrum[oneBasedIndex - 1].precursorList.precursor[0].spectrumRef ==
+                null)
             {
                 precursorScanNumber = null;
             }
@@ -576,7 +625,7 @@ namespace IO.MzML
                 dissociationType,
                 precursorScanNumber,
                 monoisotopicMz
-                );
+            );
         }
 
         /// <summary>
@@ -622,16 +671,20 @@ namespace IO.MzML
                     convertedArray[i] = BitConverter.ToDouble(bytes, i * size);
                 }
             }
+
             return convertedArray;
         }
 
-        private static int GetOneBasedPrecursorScanNumber(Generated.mzMLType _mzMLConnection, int oneBasedSpectrumNumber)
+        private static int GetOneBasedPrecursorScanNumber(Generated.mzMLType _mzMLConnection,
+            int oneBasedSpectrumNumber)
         {
-            string precursorID = _mzMLConnection.run.spectrumList.spectrum[oneBasedSpectrumNumber - 1].precursorList.precursor[0].spectrumRef;
+            string precursorID = _mzMLConnection.run.spectrumList.spectrum[oneBasedSpectrumNumber - 1].precursorList
+                .precursor[0].spectrumRef;
             do
             {
                 oneBasedSpectrumNumber--;
             } while (!precursorID.Equals(_mzMLConnection.run.spectrumList.spectrum[oneBasedSpectrumNumber - 1].id));
+
             return oneBasedSpectrumNumber;
         }
     }

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-using System.Linq; 
+using System.Linq;
+using System.Text;
 using MassSpectrometry;
 using Proteomics;
 using MzLibUtil;
@@ -12,6 +13,10 @@ namespace Program
 {
 	public class Program
 	{
+		// args[0] path where the original mzml files can be found. 
+		// args[1] path to the mgf files
+		// args[2] path to output 
+		// "scan number only nativeID format"
 		static void Main(string[] args)
 		{
             ProgramCombineFiles proc = new(); 
@@ -25,7 +30,8 @@ namespace Program
             List<MsDataScan> ms1Scans = mzml.GetAllScansList(); 
 			
             // load mgfs
-			Mgf mgf = Mgf.LoadAllStaticData(filePathMZML);
+			Mgf mgf = Mgf.LoadAllStaticData(filePathMgf);
+            SourceFile mgfSf = mgf.SourceFile; 
             List<MsDataScan> ms2Scans = mgf.GetAllScansList();
 
             if (ms2Scans.Count < 1)
@@ -56,15 +62,37 @@ namespace Program
 					scan.SetOneBasedPrecursorScanNumber(currentOneBasedScanNumber);
 				}
 			}
+			// i know this is the third concurrent iterator, but I don't care at this point. 
+            foreach (MsDataScan scan in combinedScans)
+            {
+                scan.SetNativeID(null);
+                scan.SetNativeID("controllerType=0 controllerNumber=1" + " scan=" + scan.OneBasedScanNumber.ToString());
+				scan.SetPolarity(Polarity.Positive);
+                StringBuilder sb = new StringBuilder();
+                sb.AppendJoin("", "+ ", "NSI ", "Full ms ", "[", scan.ScanWindowRange.Minimum, "-",
+                    scan.ScanWindowRange.Maximum, "]"); 
+                scan.SetScanFilter(sb.ToString());
+                if (scan.MsnOrder == 2 && scan.IsolationWidth == null)
+                {
+                    if (scan.IsolationMz == null)
+                    {
+						scan.SetIsolationMz(500);
+                    }
+					scan.SetIsolationWidth(1.1);
+                }
+            }
 
 			// put scans into an array instead of a list 
 			MsDataScan[] combinedScansArray = combinedScans.ToArray();
-            MsDataFile newFile = new MsDataFile(combinedScansArray, sf); 
+            //MsDataFile newFile = new MsDataFile(combinedScansArray, sf); 
+            SourceFile genericSf = new SourceFile("no nativeID format", "mzML format",
+                null, null, null);
+            MsDataFile newDf = new MsDataFile(combinedScansArray, genericSf);
 
-            // write file
+			// write file
 			string outfileName = filePathMgf.Replace(".mgf", ".mzml");
 			string outputFilePath = Path.Combine(outfolderPath, outfileName);
-			MzmlMethods.CreateAndWriteMyMzmlWithCalibratedSpectra(newFile, outputFilePath, false);
+			MzmlMethods.CreateAndWriteMyMzmlWithCalibratedSpectra(newDf, outputFilePath, false);
 		}
 	}
 }

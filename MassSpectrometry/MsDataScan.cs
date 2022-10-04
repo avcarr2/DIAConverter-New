@@ -61,10 +61,10 @@ namespace MassSpectrometry
         public int OneBasedScanNumber { get; private set; }
         public int MsnOrder { get; }
         public double RetentionTime { get; }
-        public Polarity Polarity { get; }
+        public Polarity Polarity { get; private set; }
         public MZAnalyzerType MzAnalyzer { get; }
         public MzRange ScanWindowRange { get; }
-        public string ScanFilter { get; }
+        public string ScanFilter { get; private set; }
         public string NativeId { get; private set; }
         public bool IsCentroid { get; }
         public double TotalIonCurrent { get; }
@@ -263,5 +263,20 @@ namespace MassSpectrometry
             MzRange newRange = new MzRange(minMz.Value, maxMz.Value);
             this.isolationRange = newRange; 
 		}
+
+        public void SetPolarity(Polarity polarity)
+        {
+            Polarity = polarity; 
+        }
+
+        public void CheckAndFixNativeId()
+        {
+
+        }
+
+        public void SetScanFilter(string filter)
+        {
+            ScanFilter = filter; 
+        }
     }
 }
