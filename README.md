@@ -25,7 +25,7 @@ Option 2: PATH TO MGF FILES:
 Option 3: PATH TO OUTPUT FOLDER
   Desired output folder. 
   
-## Running InjectionTimeGetterApp
+## Running DIAConverter-New
 1) open command prompt. 
 2) type the following command 
 > start /b "" "{path to DIAConverter-New.exe}" "{PATH TO MZML FILES}" "{PATH TO MGF FILES}" "{PATH TO OUTPUT FOLDER}"
